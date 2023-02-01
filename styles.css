@@ -34,6 +34,9 @@ body {
     background-color: #7aa644;
     position: absolute;
 }
+.options-container>div:hover, button:hover {
+    cursor: pointer;
+}
 .computer-options>div {
     background-color: #b72424;
     position: absolute;
