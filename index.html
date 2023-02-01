@@ -11,20 +11,33 @@
 <body>
     <header>
         <div class="title">Rock, Paper, Scissors Game</div>
-        <nav><button id="instructions">Instructions</button></nav>
+        <nav><button class="instructions">Instructions</button></nav>
     </header>
     <main>
         <div class="main">
             <h1>Enjoy playing our game</h1>
-            <div id="pop-inst" class="invisible">
+            <p>DEMO VERSION. Only one round version. Reload the page to play again.</p>
+            <div id="pop-inst" class="hideInstructions">
                 <h4>Instructions</h4>
                 <p>This is the classic rock, paper, scissors game.</p>
+                <button class="instructions">Close</button>
             </div>
-            <div class="options-container">
-                <div class="" id="rock">rock</div>
-                <div id="paper">paper</div>
-                <div id="scissors">scissors</div>
-            </div>
+            <section id="user">
+                <p class="section-title">Your bet</p>
+                <div class="options-container">
+                    <div class="" id="rock">rock</div>
+                    <div id="paper">paper</div>
+                    <div id="scissors">scissors</div>
+                </div>
+            </section>
+            <section id="computer">
+                <p class="section-title">Computer bet</p>
+                <div class="computer-options">
+                    <div id='0'>rock</div>
+                    <div id='1'>paper</div>
+                    <div id='2'>scissors</div>
+                </div>
+            </section>
         </div>
     </main>
 </body>

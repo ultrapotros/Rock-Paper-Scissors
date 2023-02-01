@@ -15,19 +15,46 @@ body {
 /* .main {
     position: relative;
 } */
-.options-container {
+/* .options-container {
     display: flex;
     gap: 1rem;
     justify-content:space-around;
+} */
+.computer-options, .options-container {
+    position: relative;
+    width: 100vw;
+    height:50px;
+
 }
-.options-container>div {
+.options-container>div, .computer-options>div { 
     width: 50px;
     height: 50px;
+}
+.options-container>div {
     background-color: #7aa644;
+    position: absolute;
+}
+.computer-options>div {
+    background-color: #b72424;
+    position: absolute;
+}
+.computer-options :first-child, #rock {
+    left: 12vw;
+}
+.computer-options :nth-child(2), #paper {
+    left:50%;
+    transform: translateX(-50%);
+}
+.computer-options :last-child, #scissors {
+    right: 12vw;
+}
+.hideInstructions {
+    display: none;
 }
 .invisible {
     /* visibility: hidden; */
-    display: none;
+    transition: opacity 3s ;
+    opacity:0;
 }
 #pop-inst {
     position: absolute;
