@@ -45,6 +45,7 @@ button {
 header p {
     font-size: clamp(1rem, 1.8vw, 2.5rem);
     font-weight: bold;
+    color: white;
 }
 #info {
     padding: 0 10vw;
