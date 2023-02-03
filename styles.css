@@ -59,9 +59,9 @@ body {
     transition: opacity 3s ;
     opacity:0;
 }
-#pop-inst {
+.pop-up {
     position: absolute;
     width: 50%;
     height: 50vh;
-    transform: translate(50%,50%);
+    transform: translate(50%,-50%);
 }

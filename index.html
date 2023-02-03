@@ -11,16 +11,37 @@
 <body>
     <header>
         <div class="title">Rock, Paper, Scissors Game</div>
-        <nav><button class="instructions">Instructions</button></nav>
+        <a></a>
     </header>
     <main>
         <div class="main">
             <h1>Enjoy playing our game</h1>
-            <p>DEMO VERSION. Only one round version. Reload the page to play again.</p>
-            <div id="pop-inst" class="hideInstructions">
+            <p>You can choose play 3 or 5 rounds</p>
+            <button id="start">Start</button>
+            <button class="instructions">Instructions</button>
+            <fieldset>
+                <legend>Select a number of rounds:</legend>
+                <div>
+                  <input type="radio" id="three" name="rounds" value=3
+                         checked>
+                  <label for="three">Three</label>
+                </div>
+                <div>
+                  <input type="radio" id="five" name="rounds" value=5>
+                  <label for="five">Five</label>
+                </div>
+            </fieldset>
+            <div id="pop-inst" class="hideInstructions pop-up">
                 <h4>Instructions</h4>
                 <p>This is the classic rock, paper, scissors game.</p>
                 <button class="instructions">Close</button>
+            </div>
+            <div id="pop-message" class="hideInstructions pop-up">
+                <h4></h4>
+                <p id="rounds-message"></p>
+                <p id="user-score-message"></p>
+                <p id="computer-score-message"></p>
+                <button class="messages">Close</button>
             </div>
             <section id="user">
                 <p class="section-title">Your bet</p>
@@ -33,9 +54,9 @@
             <section id="computer">
                 <p class="section-title">Computer bet</p>
                 <div class="computer-options">
-                    <div id='0'>rock</div>
-                    <div id='1'>paper</div>
-                    <div id='2'>scissors</div>
+                    <div id='c-rock'>rock</div>
+                    <div id='c-paper'>paper</div>
+                    <div id='c-scissors'>scissors</div>
                 </div>
             </section>
         </div>
