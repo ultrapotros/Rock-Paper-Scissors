@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     margin: 0;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 *,
@@ -8,60 +9,116 @@ html {
 *::after {
     box-sizing: inherit;
 }
+
 body {
     margin: 0;
     min-height: 100vh;
+    background-color: rgb(162, 220, 234);
 }
-/* .main {
-    position: relative;
-} */
-/* .options-container {
+main {
+    background-image: url(./assets/images/Piedra-papel-tijeras-reglas-juego-iStock.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 2vh 10vw;
+    text-align: center;
+    height: 100%;
+    background-size: contain;
+}   
+header {
+    padding: 2vh 5vw;
     display: flex;
-    gap: 1rem;
-    justify-content:space-around;
-} */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cc7474;
+}
+button {
+    width: 110px;
+    border-radius: 10px;
+    padding: .5rem;
+}
+.green {
+    background-color: #20b60d;
+}
+.red {
+    background-color: rgb(182, 59, 59);
+}
+header p {
+    font-size: clamp(1rem, 1.8vw, 2.5rem);
+    font-weight: bold;
+}
+#info {
+    padding: 0 10vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+#info fieldset {
+    width: min(70vW, 600px) ;
+    flex: 1;
+    text-align: left;
+}
+aside {
+    padding: 1rem;
+    min-width: 190px;
+}
+figure {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    width: 60px;
+    height: 80px;
+    border-radius: 7px;
+    background-color: #8ab02c;
+}
+#user, #computer {
+    text-align: center;
+    font-weight: bold;
+}
+.computer-options figure {
+    background-color: #CC7474;
+}
 .computer-options, .options-container {
     position: relative;
-    width: 100vw;
-    height:50px;
+    height:100px;
+    margin-top: 1rem;
 
 }
 .options-container>div, .computer-options>div { 
     width: 50px;
     height: 50px;
 }
-.options-container>div {
-    background-color: #7aa644;
+.options-container>div, .computer-options>div {
     position: absolute;
+    border-radius: 10px;
 }
 .options-container>div:hover, button:hover {
     cursor: pointer;
 }
-.computer-options>div {
-    background-color: #b72424;
-    position: absolute;
-}
-.computer-options :first-child, #rock {
+#c-rock, #rock {
     left: 12vw;
 }
-.computer-options :nth-child(2), #paper {
+#c-paper, #paper {
     left:50%;
     transform: translateX(-50%);
 }
-.computer-options :last-child, #scissors {
+#c-scissors, #scissors {
     right: 12vw;
 }
 .hideInstructions {
     display: none;
 }
 .invisible {
-    /* visibility: hidden; */
     transition: opacity 3s ;
     opacity:0;
 }
 .pop-up {
     position: absolute;
+    padding: 2rem;
+    left: 50%;
     width: 50%;
-    height: 50vh;
-    transform: translate(50%,-50%);
+    /* height: 50vh; */
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    background-color: rgba(156, 183, 37, 0.7);
+    border-radius:20px;
+    text-align: center;
 }

@@ -11,7 +11,8 @@ const computerOptions = document.querySelectorAll(`.computer-options>div`);
 const startButton = document.querySelector('#start');
 const rounds = document.querySelector('#rounds');
 let finished = false;
-let roundsNumber;
+let roundNumber = 0;
+let roundsToWin;
 let userScore = 0;
 let computerScore = 0;
 
@@ -28,8 +29,12 @@ function finishGame() {
     if (finished) {
         finished = false;
         userScore = 0;
+        roundNumber = 0;
         computerScore = 0;
-        startButton.classList.remove('hideInstructions')
+        startButton.textContent = "Start Game";
+        startButton.classList.remove('red')
+        startButton.removeEventListener('click', stop);
+        startButton.addEventListener('click', startStop);
         reloadOptions();
     } else {
         let winner = "";
@@ -65,7 +70,6 @@ function winner(computer, user) {
     if (computer.substring(2, computer.length) === user) {
         return 'draw';
     }
-    roundsNumber--;
     switch (user) {
         case "rock":
             if (computer === 'c-paper') {
@@ -95,33 +99,44 @@ function winner(computer, user) {
 }
 
 function game(e) {
+    roundNumber++;
     let computerBet = computerDecision();
     playOptions.forEach(div => div.removeEventListener('click', game));
     computerOptions.forEach(option => option.id !== computerBet ? option.classList.toggle('invisible') : null)
-    playOptions.forEach(option => option.id !== e.target.id ? option.classList.toggle('invisible') : null)
-    let win = (winner(computerBet, e.target.id))
+    playOptions.forEach(option => option.id !== e.target.offsetParent.id ? option.classList.toggle('invisible') : null)
+    let win = (winner(computerBet, e.target.offsetParent.id))
     titleMessage.textContent = win === 'draw' ? 'You draw' : `${win} win!!!!!!`;
-    roundsMessage.textContent = `Rounds left: ${roundsNumber}`;
+    roundsMessage.textContent = `Round: ${roundNumber}`;
     userRoundsMessage.textContent = `You: ${userScore}`;
     computerRoundsMessage.textContent = `Computer: ${computerScore}`;
-    popMessage.classList.remove('hideInstructions');
+    setTimeout(function() {
+        popMessage.classList.remove('hideInstructions');
+    },2000)
 }
 
 function continueGame() {
     popMessage.classList.toggle('hideInstructions')
-    if (roundsNumber > 0) {
+    if (userScore < roundsToWin && computerScore < roundsToWin) {
         reloadOptions();
         startGame();
     } else {
         finishGame();
     }
 }
-
-startButton.addEventListener('click', function () {
-    let roundsList = document.querySelectorAll('[name="rounds"]')
-    roundsList.forEach((rounds) => rounds.checked ? roundsNumber = rounds.value : null)
-    startButton.classList.add('hideInstructions')
+function stop() {
+    playOptions.forEach(div => div.removeEventListener('click', game));
+    finished = true;
+    finishGame();
+}
+function startStop() {
+    let roundsList = document.querySelectorAll('[name="rounds"]');
+    roundsList.forEach((rounds) => rounds.checked ? roundsToWin = rounds.value : null);
+    startButton.textContent = "Leave Game";
+    startButton.removeEventListener('click', startStop);
+    startButton.addEventListener('click', stop);
+    startButton.classList.add('red')
     startGame();
-});
+}
+startButton.addEventListener('click', startStop);
 instButtons.forEach(button => button.addEventListener('click', () => popInst.classList.toggle('hideInstructions')));
 messageButtons.forEach(button => button.addEventListener('click', continueGame));

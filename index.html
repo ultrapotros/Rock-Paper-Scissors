@@ -10,30 +10,56 @@
 </head>
 <body>
     <header>
-        <div class="title">Rock, Paper, Scissors Game</div>
-        <a></a>
+        <p class="title">Rock, Paper, Scissors Game</p>
+        <nav>
+            <a href="https://www.linkedin.com/in/santiagomezquitafernandez/" target="_blank">
+                <img 
+                    src="./assets/images/linkedin-icon-logo-black-and-white.png" 
+                    alt="linkedin logo"
+                    width="50px"
+                    height="50px"/>
+            </a>
+            <a href="https://github.com/ultrapotros" target="_blank">
+                <img 
+                    src="./assets/images/github-mark-white.png" 
+                    alt="linkedin logo"
+                    width="50px"
+                    height="50px"/>
+            </a>
+        </nav>
     </header>
     <main>
         <div class="main">
             <h1>Enjoy playing our game</h1>
-            <p>You can choose play 3 or 5 rounds</p>
-            <button id="start">Start</button>
-            <button class="instructions">Instructions</button>
-            <fieldset>
-                <legend>Select a number of rounds:</legend>
-                <div>
-                  <input type="radio" id="three" name="rounds" value=3
-                         checked>
-                  <label for="three">Three</label>
-                </div>
-                <div>
-                  <input type="radio" id="five" name="rounds" value=5>
-                  <label for="five">Five</label>
-                </div>
-            </fieldset>
+            <p>You can choose to play at the best of 3 rounds or at the best of 5 rounds</p>
+            <section id="info">
+                <fieldset>
+                    <legend>Choose game mode:</legend>
+                    <div>
+                        <input type="radio" id="three" name="rounds" value=2
+                        checked>
+                        <label for="three">Best of three</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="five" name="rounds" value=3>
+                        <label for="five">Best of five</label>
+                    </div>
+                </fieldset>
+                <aside>
+                    <button class="instructions">Instructions</button>
+                    <button class="green" id="start">Start Game</button>
+                </aside>
+            </section>
             <div id="pop-inst" class="hideInstructions pop-up">
                 <h4>Instructions</h4>
                 <p>This is the classic rock, paper, scissors game.</p>
+                <p>
+                    You can choose to play at the best of three rounds or at the best of five rounds.<br>
+                    If you choose the three option, you have to win 2 rounds to beat the computer.<br>
+                    And if you choose the five option, you have to win 3 rounds to beat the computer.<br>
+                    To start the game just click the start button, then you only have to click over your choice.
+                </p>
+                <p>Good luck andnjoy the game!!!!!!!!!!</p>
                 <button class="instructions">Close</button>
             </div>
             <div id="pop-message" class="hideInstructions pop-up">
@@ -41,22 +67,52 @@
                 <p id="rounds-message"></p>
                 <p id="user-score-message"></p>
                 <p id="computer-score-message"></p>
-                <button class="messages">Close</button>
+                <button class="messages">Next=></button>
             </div>
             <section id="user">
                 <p class="section-title">Your bet</p>
                 <div class="options-container">
-                    <div class="" id="rock">rock</div>
-                    <div id="paper">paper</div>
-                    <div id="scissors">scissors</div>
+                    <div id="rock">
+                        <figure>
+                            <img src="./assets/images/icons8-papel-mate-50.png" alt="rock image"/>
+                            <figcaption>Rock</figcaption>
+                        </figure>
+                    </div>
+                    <div id="paper">
+                        <figure>
+                            <img src="./assets/images/icons8-papel-mate-50.png" alt="paper image"/>
+                            <figcaption>Paper</figcaption>
+                        </figure>
+                    </div>
+                    <div id="scissors">
+                        <figure>
+                            <img src="./assets/images/icons8-tijeras-de-peluquero-50.png" alt="scissors image"/>
+                            <figcaption>Scissors</figcaption>
+                        </figure>
+                    </div>
                 </div>
             </section>
             <section id="computer">
                 <p class="section-title">Computer bet</p>
                 <div class="computer-options">
-                    <div id='c-rock'>rock</div>
-                    <div id='c-paper'>paper</div>
-                    <div id='c-scissors'>scissors</div>
+                    <div id='c-rock'>
+                        <figure>
+                            <img src="./assets/images/icons8-papel-mate-50.png" alt="rock image"/>
+                            <figcaption>Rock</figcaption>
+                        </figure>
+                    </div>
+                    <div id='c-paper'>
+                        <figure>
+                            <img src="./assets/images/icons8-papel-mate-50.png" alt="paper image"/>
+                            <figcaption>Paper</figcaption>
+                        </figure>
+                    </div>
+                    <div id='c-scissors'>
+                        <figure>
+                            <img src="./assets/images/icons8-tijeras-de-peluquero-50.png" alt="rock image"/>
+                            <figcaption>Scissors</figcaption>
+                        </figure>
+                    </div>
                 </div>
             </section>
         </div>
