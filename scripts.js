@@ -17,6 +17,7 @@ let userScore = 0;
 let computerScore = 0;
 
 function startGame() {
+    playOptions.forEach(div => div.classList.add('active'));
     playOptions.forEach(div => div.addEventListener('click', game));
 }
 
@@ -101,6 +102,7 @@ function winner(computer, user) {
 function game(e) {
     roundNumber++;
     let computerBet = computerDecision();
+    playOptions.forEach(div => div.classList.remove('active'));
     playOptions.forEach(div => div.removeEventListener('click', game));
     computerOptions.forEach(option => option.id !== computerBet ? option.classList.toggle('invisible') : null)
     playOptions.forEach(option => option.id !== e.target.offsetParent.id ? option.classList.toggle('invisible') : null)
@@ -111,7 +113,7 @@ function game(e) {
     computerRoundsMessage.textContent = `Computer: ${computerScore}`;
     setTimeout(function() {
         popMessage.classList.remove('hideInstructions');
-    },2000)
+    },1500)
 }
 
 function continueGame() {
@@ -124,6 +126,7 @@ function continueGame() {
     }
 }
 function stop() {
+    playOptions.forEach(div => div.classList.remove('active'));
     playOptions.forEach(div => div.removeEventListener('click', game));
     finished = true;
     finishGame();
@@ -134,7 +137,7 @@ function startStop() {
     startButton.textContent = "Leave Game";
     startButton.removeEventListener('click', startStop);
     startButton.addEventListener('click', stop);
-    startButton.classList.add('red')
+    startButton.classList.add('red');
     startGame();
 }
 startButton.addEventListener('click', startStop);

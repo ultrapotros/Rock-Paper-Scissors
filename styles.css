@@ -15,6 +15,7 @@ body {
     min-height: 100vh;
     background-color: rgb(162, 220, 234);
 }
+
 main {
     background-image: url(./assets/images/Piedra-papel-tijeras-reglas-juego-iStock.jpg);
     background-repeat: no-repeat;
@@ -23,44 +24,65 @@ main {
     text-align: center;
     height: 100%;
     background-size: contain;
-}   
+}
+
 header {
     padding: 2vh 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cc7474;
+    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
 }
+
 button {
     width: 110px;
     border-radius: 10px;
     padding: .5rem;
 }
+.instructions {
+    background-color: rgb(240, 255, 255,.8);
+}
 .green {
-    background-color: #20b60d;
+    background-color: rgb(32, 182, 13,.9);
 }
+
 .red {
-    background-color: rgb(182, 59, 59);
+    background-color: rgb(239, 24, 24,.8);
 }
+
 header p {
     font-size: clamp(1rem, 1.8vw, 2.5rem);
     font-weight: bold;
     color: white;
 }
+
+fieldset {
+    border-radius: 10px;
+    color: black;
+    font-weight: 300;
+}
+
+legend {
+    font-weight: bold;
+}
+
 #info {
     padding: 0 10vw;
     display: flex;
     flex-wrap: wrap;
 }
+
 #info fieldset {
-    width: min(70vW, 600px) ;
+    width: min(70vW, 600px);
     flex: 1;
     text-align: left;
 }
+
 aside {
     padding: 1rem;
     min-width: 190px;
 }
+
 figure {
     display: grid;
     place-items: center;
@@ -68,58 +90,82 @@ figure {
     width: 60px;
     height: 80px;
     border-radius: 7px;
-    background-color: #8ab02c;
+    background: linear-gradient(to right, rgb(138, 176, 44, .7), rgb(93, 110, 64, .7));
 }
-#user, #computer {
+
+#user,
+#computer {
     text-align: center;
     font-weight: bold;
 }
+
 .computer-options figure {
-    background-color: #CC7474;
+    background: linear-gradient(to right, rgb(204, 116, 116, .7), rgb(202, 183, 171, .7));
 }
-.computer-options, .options-container {
+
+.computer-options,
+.options-container {
     position: relative;
-    height:100px;
+    height: 100px;
     margin-top: 1rem;
 
 }
-.options-container>div, .computer-options>div { 
+
+.options-container>div,
+.computer-options>div {
     width: 50px;
     height: 50px;
 }
-.options-container>div, .computer-options>div {
+
+.options-container>div,
+.computer-options>div {
     position: absolute;
-    border-radius: 10px;
+    border-radius: 25px;
 }
-.options-container>div:hover, button:hover {
+
+.active:hover,
+button:hover {
     cursor: pointer;
 }
-#c-rock, #rock {
+
+#c-rock,
+#rock {
     left: 12vw;
 }
-#c-paper, #paper {
-    left:50%;
+
+#c-paper,
+#paper {
+    left: 50%;
     transform: translateX(-50%);
 }
-#c-scissors, #scissors {
+
+#c-scissors,
+#scissors {
     right: 12vw;
 }
+
 .hideInstructions {
     display: none;
 }
+
 .invisible {
-    transition: opacity 3s ;
-    opacity:0;
+    transition: opacity 3s;
+    opacity: 0;
 }
+
 .pop-up {
     position: absolute;
     padding: 2rem;
     left: 50%;
     width: 50%;
-    /* height: 50vh; */
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 1;
     background-color: rgba(156, 183, 37, 0.7);
-    border-radius:20px;
+    border-radius: 20px;
     text-align: center;
+}
+
+img,
+figcaption {
+    opacity: .7;
 }
