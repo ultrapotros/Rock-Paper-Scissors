@@ -39,15 +39,17 @@ button {
     border-radius: 10px;
     padding: .5rem;
 }
+
 .instructions {
-    background-color: rgb(240, 255, 255,.8);
+    background-color: rgb(240, 255, 255, .8);
 }
+
 .green {
-    background-color: rgb(32, 182, 13,.9);
+    background-color: rgb(32, 182, 13, .9);
 }
 
 .red {
-    background-color: rgb(239, 24, 24,.8);
+    background-color: rgb(239, 24, 24, .8);
 }
 
 header p {
@@ -124,7 +126,8 @@ figure {
 }
 
 .active:hover,
-button:hover {
+button:hover,
+input:hover {
     cursor: pointer;
 }
 
