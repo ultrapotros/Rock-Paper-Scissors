@@ -24,6 +24,7 @@ main {
     text-align: center;
     height: 100%;
     background-size: contain;
+    margin-top: 1rem;
 }
 
 header {
@@ -32,6 +33,11 @@ header {
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+}
+
+nav>a>img {
+    width: clamp(30px, 10vw, 50px);
+    aspect-ratio: 1 / 1;
 }
 
 button {
@@ -53,9 +59,9 @@ button {
 }
 
 header p {
-    font-size: clamp(1rem, 1.8vw, 2.5rem);
+    font-size: clamp(1rem, 10vw, 2.5rem);
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255,.8);
 }
 
 fieldset {
@@ -78,19 +84,19 @@ legend {
     width: min(70vW, 600px);
     flex: 1;
     text-align: left;
+    min-width: 200px;
 }
 
 aside {
     padding: 1rem;
-    min-width: 190px;
 }
 
 figure {
     display: grid;
     place-items: center;
     margin: 0;
-    width: 60px;
-    height: 80px;
+    width: clamp(40px, 10vw, 60px);
+    aspect-ratio: 6 / 8;
     border-radius: 7px;
     background: linear-gradient(to right, rgb(138, 176, 44, .7), rgb(93, 110, 64, .7));
 }
@@ -102,7 +108,7 @@ figure {
 }
 
 .computer-options figure {
-    background: linear-gradient(to right, rgb(204, 116, 116, .7), rgb(202, 183, 171, .7));
+    background: linear-gradient(to left, rgb(204, 116, 116, .7), rgb(202, 183, 171, .7));
 }
 
 .computer-options,
@@ -117,12 +123,7 @@ figure {
 .computer-options>div {
     width: 50px;
     height: 50px;
-}
-
-.options-container>div,
-.computer-options>div {
     position: absolute;
-    border-radius: 25px;
 }
 
 .active:hover,
@@ -160,10 +161,9 @@ input:hover {
     position: absolute;
     padding: 2rem;
     left: 50%;
-    width: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    background-color: rgba(156, 183, 37, 0.7);
+    background-color: rgba(156, 183, 37, 0.85);
     border-radius: 20px;
     text-align: center;
 }
@@ -171,4 +171,13 @@ input:hover {
 img,
 figcaption {
     opacity: .7;
+}
+
+figure img {
+    width: 100%;
+    width: clamp(30px, 10vw, 50px);
+}
+
+figure figcaption {
+    font-size: clamp(3px, 10vw, 12px);
 }
