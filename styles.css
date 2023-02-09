@@ -32,7 +32,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    background: linear-gradient(45deg, #001011, #0e4a4f, #63858e);
 }
 
 nav>a>img {
@@ -44,6 +44,7 @@ button {
     width: 110px;
     border-radius: 10px;
     padding: .5rem;
+    margin-top: .5rem;
 }
 
 .instructions {
@@ -61,7 +62,7 @@ button {
 header p {
     font-size: clamp(1rem, 10vw, 2.5rem);
     font-weight: bold;
-    color: rgb(255, 255, 255,.8);
+    color: rgb(255, 255, 255, .8);
 }
 
 fieldset {
@@ -98,7 +99,8 @@ figure {
     width: clamp(40px, 10vw, 60px);
     aspect-ratio: 6 / 8;
     border-radius: 7px;
-    background: linear-gradient(to right, rgb(138, 176, 44, .7), rgb(93, 110, 64, .7));
+    background: rgb(105, 153, 93);
+    opacity: .8;
 }
 
 #user,
@@ -108,44 +110,30 @@ figure {
 }
 
 .computer-options figure {
-    background: linear-gradient(to left, rgb(204, 116, 116, .7), rgb(202, 183, 171, .7));
+    background: rgb(203, 172, 136);
+    opacity: .8;
 }
 
 .computer-options,
 .options-container {
-    position: relative;
     height: 100px;
     margin-top: 1rem;
-
+    display: flex;
+    justify-content: space-around;
 }
 
 .options-container>div,
 .computer-options>div {
     width: 50px;
     height: 50px;
-    position: absolute;
 }
 
 .active:hover,
 button:hover,
-input:hover {
+input:hover,
+a img:hover {
     cursor: pointer;
-}
-
-#c-rock,
-#rock {
-    left: 12vw;
-}
-
-#c-paper,
-#paper {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#c-scissors,
-#scissors {
-    right: 12vw;
+    transform: scale(1.02);
 }
 
 .hideInstructions {
