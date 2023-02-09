@@ -32,7 +32,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    background: linear-gradient(45deg, #001011, /* #A2DCEA, */ #093A3E);
+    /* background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59); */
 }
 
 nav>a>img {
@@ -98,7 +99,8 @@ figure {
     width: clamp(40px, 10vw, 60px);
     aspect-ratio: 6 / 8;
     border-radius: 7px;
-    background: linear-gradient(to right, rgb(138, 176, 44, .7), rgb(93, 110, 64, .7));
+    background: #69995D;
+    /* background: linear-gradient(to right, rgb(138, 176, 44, .7), rgb(93, 110, 64, .7)); */
 }
 
 #user,
@@ -108,7 +110,8 @@ figure {
 }
 
 .computer-options figure {
-    background: linear-gradient(to left, rgb(204, 116, 116, .7), rgb(202, 183, 171, .7));
+    background: #CBAC88;
+    /* background: linear-gradient(to left, rgb(204, 116, 116, .7), rgb(202, 183, 171, .7)); */
 }
 
 .computer-options,
