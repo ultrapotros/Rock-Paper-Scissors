@@ -105,8 +105,8 @@ function game(e) {
     playOptions.forEach(div => div.classList.remove('active'));
     playOptions.forEach(div => div.removeEventListener('click', game));
     computerOptions.forEach(option => option.id !== computerBet ? option.classList.toggle('invisible') : null)
-    playOptions.forEach(option => option.id !== e.target.id? option.classList.toggle('invisible') : null)
-    let win = (winner(computerBet, e.target.id))
+    playOptions.forEach(option => option.id !== e.target.className ? option.classList.toggle('invisible') : null)
+    let win = (winner(computerBet, e.target.className))
     titleMessage.textContent = win === 'draw' ? 'You draw' : `${win} win!!!!!!`;
     roundsMessage.textContent = `Round: ${roundNumber}`;
     userRoundsMessage.textContent = `You: ${userScore}`;
